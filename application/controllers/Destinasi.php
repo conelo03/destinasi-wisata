@@ -26,10 +26,10 @@ class Destinasi extends CI_Controller {
 		$this->load->library('pagination');
 		$config['base_url'] = base_url('Destinasi/index'); //site url
         $config['total_rows'] = $this->db->get('tb_destinasi')->num_rows(); //total row
-        $config['per_page'] = 5;  //show record per halaman
+        $config['per_page'] = 8;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"] = floor($choice);
+        $config["num_links"] = 3;
  
         // Membuat Style pagination untuk BootStrap v4
       	$config['first_link']       = 'First';

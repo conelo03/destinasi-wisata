@@ -12,6 +12,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Home';
+		$data['kategori']		= $this->M_kategori->get_data()->result_array();
 		$data['destination'] = $this->db->select('*')->from('tb_destinasi')->limit(3)->order_by('jml_komen', 'DESC')->get()->result_array();
 		$this->load->view('front/home', $data);
 	}
@@ -19,6 +20,7 @@ class Home extends CI_Controller {
 	public function about()
 	{
 		$data['title'] = 'Tentang';
+		$data['kategori']		= $this->M_kategori->get_data()->result_array();
 		$this->load->view('front/about', $data);
 	}
 

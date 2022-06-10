@@ -64,7 +64,7 @@ class Destinasi extends CI_Controller {
 			$this->load->view('admin/destinasi/edit', $data);
 		} else {
 			$data		= $this->input->post(null, true);
-			if (empty($_FILES['gambar']['name'])) {
+			if (empty($_FILES['gambar[]']['name'])) {
 				$gambar = $data['gambar_old'];
 			}else{
 				$gambar = $this->upload_gambar();

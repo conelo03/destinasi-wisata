@@ -109,7 +109,16 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto <?= $title == 'Home' ? 'active' : '' ?>" href="<?= base_url('home') ?>">Beranda</a></li>
-          <li><a class="nav-link scrollto <?= $title == 'Destinasi' ? 'active' : '' ?>" href="<?= base_url('destinasi') ?>">Destinasi</a></li>
+          <li class="dropdown"><a href="<?= base_url('destinasi') ?>" class="<?= $title == 'Destinasi' ? 'active' : '' ?>"><span>Destinasi</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+            <?php foreach ($kategori as $key) { 
+              $jml_des = $this->db->get_where('tb_destinasi', ['id_kategori' => $key['id_kategori']])->num_rows();
+              $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+            ?>
+              <li><a href="<?= base_url('Destinasi/index/'.$page.'/'.$key['id_kategori']) ?>"><?= $key['nama_kategori'] ?> <span>(<?= $jml_des ?>)</span></a></li>
+            <?php } ?>
+            </ul>
+          </li>
           <li><a class="nav-link scrollto <?= $title == 'Tentang' ? 'active' : '' ?>" href="<?= base_url('about') ?>">Tentang</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

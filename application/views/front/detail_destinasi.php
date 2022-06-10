@@ -11,7 +11,7 @@
           <li><a href="index.html">Beranda</a></li>
           <li>Destinasi</li>
         </ol>
-        <h2>Destinasi Detail</h2>
+        <h2><?= $destinasi['judul'] ?></h2>
 
       </div>
     </section>
