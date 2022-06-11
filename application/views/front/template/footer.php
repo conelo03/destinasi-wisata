@@ -10,10 +10,10 @@
             </a>
             <p>DPOP Kota Balikpapan adalah instansi pemerintahan yang bergerak dibidang kepemudaan, keolahragaan dan kepariwisataan.</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a href="https://twitter.com/porabudpar_bpn?s=21&t=0N2lBhyBXd5Ty8JZ_zt3bA" target="_target" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.facebook.com/disporaparkotabpn" target="_target" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://instagram.com/disporapar_balikpapan?igshid=YmMyMTA2M2Y=" target="_target" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="mailto:dpokp.balikpapan@gmail.com" target="_blank" class="linkedin"><i class="bi bi-envelope"></i></a>
             </div>
           </div>
 
@@ -44,10 +44,7 @@
             <p>
               Jl. Marsma R. Iswahyudi No.121, Gn. Bahagia, Kecamatan Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76114.<br/>
               <strong>Telepon</strong>: (0542) 761111<br>
-              <strong>Email</strong>: dpokp.balikpapan@gmail.com<br>
-              <strong>Instagram</strong>: @disporapar_balikpapan<br>
-              <strong>Twitter</strong>: @porabudparbpp<br>
-              <strong>Facebook</strong>: disporaparkotabpn<br>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8384468945037!2d116.87341601475389!3d-1.2698573990737982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df146963aafe5f1%3A0x6c2f292a791828a5!2sDISPORAPAR!5e0!3m2!1sen!2sid!4v1654874509962!5m2!1sen!2sid" max-width="306" max-height="306" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </p>
 
           </div>

@@ -61,10 +61,12 @@
 
         <div class="row">
           <?php
-            foreach ($destination as $d) { ?>
+            foreach ($destination as $d) {  
+              $image = explode('||', $d['gambar']);
+            ?>
               <div class="col-lg-4">
                 <div class="post-box">
-                  <div class="post-img"><img src="<?= base_url('assets/upload/gambar/'.$d['gambar']) ?>" class="img-fluid" alt=""></div>
+                  <div class="post-img"><img src="<?= base_url('assets/upload/gambar/'.$image[0]) ?>" class="img-fluid" style="width: 100%; height: 200px;" alt=""></div>
                   <span class="post-date"><?= date('F Y', strtotime($d['datetime'])) ?></span>
                   <h3 class="post-title"><?= $d['judul'] ?></h3>
                   <a href="<?= base_url('detail-destinasi/'.$d['id_destinasi']) ?>" class="readmore stretched-link mt-auto"><span>Read More</span><i

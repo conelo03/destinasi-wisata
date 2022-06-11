@@ -24,7 +24,7 @@
         <div class="row gy-4">
 
           <div class="col-lg-6" data-aos="fade-up">
-            <div class="about-info" style="height: 530px;">
+            <div class="about-info" style="height: 590px;">
               <h3>Tentang Kita</h3>
               <ul>
                 <li><strong>Instansi</strong>: Dinas Pemuda , Olahraga dan Pariwisata Kota Balikpapan.</li>
@@ -44,8 +44,12 @@
           </div>
 
           <div class="col-lg-6" data-aos="fade-up">
-            <div class="about-info" style="height: 530px;">
+            <div class="about-info" style="height: 590px;">
               <h3>Gambaran Umum</h3>
+              <div class="text-center">
+                <img src="<?= base_url('assets/front/img/logo.png') ?>" class="text-center" />
+              </div>
+              
               <p style="text-align: justify;">DPOP Kota Balikpapan adalah instansi pemerintahan yang bergerak dibidang kepemudaan, keolahragaan dan kepariwisataan. Dalam hal ini mengurusi kebijakan-kebijakan yang menyangkut dalam hal perkembangan sektor pariwisata, olah raga dan pariwisata termasuk dalam hal rekomendasi perizinan usaha pariwisata, rekomendasi perizinan cabang olah raga serta rekomendasi pemberian dana hibah bagi lembaga dalam sektor kepemudaan dan olahraga.</p>
             </div>
           </div>
