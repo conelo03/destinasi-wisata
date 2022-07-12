@@ -80,8 +80,10 @@ class Destinasi extends CI_Controller {
 
 	public function detail($id_destinasi)
 	{
+		$this->hitung($id_destinasi);
 		$data['title'] = 'Destinasi';
 		$data['recent_destinasi'] = $this->db->select('*')->from('tb_destinasi')->limit('5')->order_by('id_destinasi', 'DESC')->get()->result_array();
+		$data['jml_pengunjung'] = $this->db->get_where('tb_pengunjung_destinasi', ['id_destinasi' => $id_destinasi])->num_rows();
 		$data['komentar'] = $this->M_komentar->get_data($id_destinasi)->result_array();
 		$data['kategori']		= $this->M_kategori->get_data()->result_array();
 		$data['destinasi'] = $this->M_destinasi->get_by_id($id_destinasi);
@@ -133,5 +135,23 @@ class Destinasi extends CI_Controller {
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
 		$this->form_validation->set_rules('komentar', 'Komentar', 'required|trim');
+	}
+
+	public function hitung($id_destinasi)
+	{
+		$cek = $this->db->get_where('tb_pengunjung_destinasi', ['id_destinasi' => $id_destinasi, 'ci_session' => $_COOKIE['ci_session']])->num_rows();
+
+		if($cek == 0){
+			$data = [
+				'id_destinasi' => $id_destinasi,
+				'ci_session' => $_COOKIE['ci_session'],
+				'count' => 1
+			];
+
+			$this->db->insert('tb_pengunjung_destinasi', $data);
+		}
+			
+		
+		return true;
 	}
 }

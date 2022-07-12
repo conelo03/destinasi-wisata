@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 	{
 		$data['title'] = 'Home';
 		$data['kategori']		= $this->M_kategori->get_data()->result_array();
-		$data['destination'] = $this->db->select('*')->from('tb_destinasi')->limit(3)->order_by('jml_komen', 'DESC')->get()->result_array();
+		$data['destination'] = $this->db->query("SELECT tb_destinasi.*, COUNT(tb_pengunjung_destinasi.count) as jml_pengunjung FROM tb_destinasi, tb_pengunjung_destinasi where tb_pengunjung_destinasi.id_destinasi=tb_destinasi.id_destinasi GROUP by tb_pengunjung_destinasi.id_destinasi ORDER by jml_pengunjung DESC LIMIT 3")->result_array();
 		$this->load->view('front/home', $data);
 	}
 

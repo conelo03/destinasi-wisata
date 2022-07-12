@@ -58,6 +58,7 @@
                     <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?= base_url('detail-destinasi/'.$destinasi['id_destinasi']) ?>"><?= $destinasi['author'] ?></a></li>
                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?= base_url('detail-destinasi/'.$destinasi['id_destinasi']) ?>"><time datetime="<?= date('Y-m-d', strtotime($destinasi['datetime'])) ?>"><?= date('M d, Y', strtotime($destinasi['datetime'])) ?></time></a></li>
                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="<?= base_url('detail-destinasi/'.$destinasi['id_destinasi']) ?>"><?= $destinasi['jml_komen'] ?> Comments</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a href="<?= base_url('detail-destinasi/'.$destinasi['id_destinasi']) ?>"><?= $jml_pengunjung ?> Visitors</a></li>
                   </ul>
                 </div>
 

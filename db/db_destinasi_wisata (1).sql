@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 08:44 AM
+-- Generation Time: Jul 12, 2022 at 04:25 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.2.33
 
@@ -196,6 +196,33 @@ CREATE TABLE `tb_pengguna` (
 INSERT INTO `tb_pengguna` (`id_pengguna`, `nama_pengguna`, `username`, `password`, `level`) VALUES
 (1, 'Fauza Amalia', 'admin', '$2y$10$zBE.5Z8qc33ikcP79fqJHetnWIXEFMLNG7ihywrFXTMkStgaX6Flq', 'admin');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_pengunjung_destinasi`
+--
+
+CREATE TABLE `tb_pengunjung_destinasi` (
+  `id_pengunjung_destinasi` int(11) NOT NULL,
+  `id_destinasi` int(11) NOT NULL,
+  `ci_session` varchar(100) NOT NULL,
+  `count` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_pengunjung_destinasi`
+--
+
+INSERT INTO `tb_pengunjung_destinasi` (`id_pengunjung_destinasi`, `id_destinasi`, `ci_session`, `count`) VALUES
+(4, 11, 'kmtuln513jgp5sg2s6gttktgr6bl32gn', 1),
+(5, 8, 'e9kkmc6a9bpmta7fc0rqme4voohppadc', 1),
+(6, 8, 'kmtuln513jgp5sg2s6gttktgr6bl32gn', 1),
+(7, 8, 'obpddgrlhvahsp15qesjju0j0d6qkto3', 1),
+(8, 9, 'obpddgrlhvahsp15qesjju0j0d6qkto3', 1),
+(9, 11, 'obpddgrlhvahsp15qesjju0j0d6qkto3', 1),
+(10, 15, 'obpddgrlhvahsp15qesjju0j0d6qkto3', 1),
+(11, 8, '24fb3cbaoormgo36th0sjl5ef24j3d2s', 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -225,6 +252,12 @@ ALTER TABLE `tb_pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
+-- Indexes for table `tb_pengunjung_destinasi`
+--
+ALTER TABLE `tb_pengunjung_destinasi`
+  ADD PRIMARY KEY (`id_pengunjung_destinasi`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -251,6 +284,12 @@ ALTER TABLE `tb_komentar`
 --
 ALTER TABLE `tb_pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_pengunjung_destinasi`
+--
+ALTER TABLE `tb_pengunjung_destinasi`
+  MODIFY `id_pengunjung_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
