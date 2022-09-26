@@ -63,62 +63,67 @@
           </div> 
           <div class="col-lg-12 entries">
             <div class="row">
-            <?php foreach ($destinasi as $key): 
-              $image = explode('||', $key['gambar']);
-            ?>
-            <div class="col-md-3">
-              <article class="entry" style="height: 500px;">
+              <?php if ($destinasi) { ?>
+                <?php foreach ($destinasi as $key): 
+                  $image = explode('||', $key['gambar']);
+                ?>
+                <div class="col-md-3">
+                  <article class="entry" style="height: 500px;">
 
-                <div class="entry-img">
-                  <img src="<?= base_url('assets/upload/gambar/'.$image[0]) ?>" alt="" style="width: 100%; height: 200px;" class="img-fluid">
-                </div>
+                    <div class="entry-img">
+                      <img src="<?= base_url('assets/upload/gambar/'.$image[0]) ?>" alt="" style="width: 100%; height: 200px;" class="img-fluid">
+                    </div>
 
-                <h2 class="entry-title" style="font-size: 14px; height: 30px">
-                  <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><?= $key['judul'] ?></a>
-                </h2>
+                    <h2 class="entry-title" style="font-size: 14px; height: 30px">
+                      <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><?= $key['judul'] ?></a>
+                    </h2>
 
-                <!-- <div class="entry-meta">
-                  <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><?= $key['author'] ?></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><time datetime="<?= date('Y-m-d', strtotime($key['datetime'])) ?>"><?= date('M d, Y', strtotime($key['datetime'])) ?></time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><?= $key['jml_komen'] ?> Comments</a></li>
-                  </ul>
-                </div> -->
+                    <!-- <div class="entry-meta">
+                      <ul>
+                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><?= $key['author'] ?></a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><time datetime="<?= date('Y-m-d', strtotime($key['datetime'])) ?>"><?= date('M d, Y', strtotime($key['datetime'])) ?></time></a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>"><?= $key['jml_komen'] ?> Comments</a></li>
+                      </ul>
+                    </div> -->
 
-                <div class="entry-content">
-                  <div style="text-align: justify; height: 170px;">
-                    <?php
-                        $result = str_replace("<br />", "", $key['konten']);
-                        $arr = explode(" ", $result);
-                        $limit = 15;
-                        $new = [];
+                    <div class="entry-content">
+                      <div style="text-align: justify; height: 170px;">
+                        <?php
+                            $result = str_replace("<br />", "", $key['konten']);
+                            $arr = explode(" ", $result);
+                            $limit = 15;
+                            $new = [];
 
-                        if (count($arr) > $limit) {
-                            for($i = 0; $i < $limit; $i++) {
-                                array_push($new, $arr[$i]);
+                            if (count($arr) > $limit) {
+                                for($i = 0; $i < $limit; $i++) {
+                                    array_push($new, $arr[$i]);
+                                }
                             }
-                        }
 
-                        if($new) {
-                            $new = implode(" ", $new);
-                            echo $new; // Output : Rasang Beam Steal
-                        }
-                        else {
-                            echo $key['konten'];
-                        }
-                    ?>
-                  </div>
-                    
-                  <div class="read-more">
-                    <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>">Read More</a>
-                  </div>
+                            if($new) {
+                                $new = implode(" ", $new);
+                                echo $new; // Output : Rasang Beam Steal
+                            }
+                            else {
+                                echo $key['konten'];
+                            }
+                        ?>
+                      </div>
+                        
+                      <div class="read-more">
+                        <a href="<?= base_url('detail-destinasi/'.$key['id_destinasi']) ?>">Read More</a>
+                      </div>
+                    </div>
+
+                  </article><!-- End blog entry -->
+                
+
                 </div>
-
-              </article><!-- End blog entry -->
-            
-
-            </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+              <?php } else { ?>
+                Wisata tidak ditemukan.
+              <?php } ?>
+              
               
             </div>
             
