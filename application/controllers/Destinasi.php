@@ -33,9 +33,6 @@ class Destinasi extends CI_Controller {
 			$this->db->or_like('tb_kategori.nama_kategori', $data['keyword'], 'both');
 			$config['total_rows'] = $this->db->get('tb_destinasi')->num_rows();  
 		}elseif($id_kategori != null){
-			$data['keyword'] = '';
-			$kat = $this->db->get_where('tb_kategori', ['id_kategori' => $id_kategori])->row_array();
-			$data['nama_kategori'] = $kat['nama_kategori'];
 			$config['total_rows'] = $this->db->where('id_kategori', $id_kategori)->get('tb_destinasi')->num_rows();  
 		}else{
 			$config['total_rows'] = $this->db->get('tb_destinasi')->num_rows();
